@@ -1,0 +1,230 @@
+@import "reset"
+@import "fonts"
+
+$cream:  #fcf4eb
+$blood:  #be0000
+$stone:  #cac7c3
+$steel:  #666461
+$pitch:  #15100b
+$white:  #ffffff
+$orange: #ef4723
+$sea:    #4f7a8e
+$sky:    #7dc2d1
+
+// General styles
+.slide
+  padding-top: 50px
+  height:      736px
+  overflow:    hidden
+  position:    relative
+
+.text
+  width:       900px
+  height:      686px
+  margin:      auto
+  position:    relative
+  font-size:   72px
+  text-align:  center
+  overflow:    hidden
+  font-family: Book
+
+pre
+  color:       $pitch
+  font-size:   24px
+  text-align:  left
+  background:  transparent
+  font-family: Monotonous
+
+.slide-number
+  right:       50px
+  bottom:      25px
+  position:    absolute
+  font-size:   2em
+  font-family: Fancy
+
+a
+  text-decoration: none
+
+// Go To Slide Frame
+.go-to-slide-frame
+  top:           0
+  left:          0
+  right:         0
+  bottom:        0
+  width:         160px
+  height:        160px
+  border:        5px solid $blood
+  margin:        auto
+  padding:       50px
+  z-index:       3
+  display:       none
+  position:      fixed
+  word-wrap:     break-word
+  border-radius: 200px
+
+.go-to-slide-frame .lens
+  top:           0
+  left:          0
+  right:         0
+  bottom:        0
+  width:         160px
+  height:        160px
+  opacity:       0.95
+  z-index:       2
+  padding:       50px
+  margin:        auto
+  position:      fixed
+  background:    $white
+  border-radius: 200px
+
+
+.go-to-slide-frame .content
+  top:         50px
+  z-index:     3
+  position:    relative
+  font-size:   20px
+  text-align:  center
+  font-family: Blocky
+
+.go-to-slide-frame .value
+  font-size: 30px
+
+// Slide Zero
+.haskell-logo
+  top:      150px
+  left:     0px
+  width:    350px
+  z-index:  1
+  position: absolute
+
+.intro-to-haskell
+  color:       $blood
+  text-align:  left
+  font-size:   72px
+  font-family: Blocky
+
+.or
+  position:      relative
+  bottom:        9px
+  color:         $white
+  padding:       5px 10px
+  background:    $pitch
+  font-family:   Fancy
+  font-size:     72px
+  border-radius: 60px
+
+.applicative
+  color:       $blood
+  font-size:   72px
+  font-family: Sanstyle
+
+.s00
+  background: $cream
+  color:      $blood
+
+.s00 pre,
+.s00 code
+  color: $pitch
+
+.s00 .text
+  margin-top:  50px
+  padding-top: 0
+  font-family: Book
+
+.s00 .text p
+  left:        300px
+  width:       600px
+  z-index:     2
+  position:    absolute
+  text-align:  left
+  line-height: 90%
+
+// Slide One
+.s01
+  color:       $blood
+  background:  $pitch
+  font-family: Sanstyle
+
+.s01 pre,
+.s01 code
+  color: $cream
+
+.s01 a,
+.s01 a:visited
+  color: $cream
+
+// Slide Two
+.s02
+  background:  $stone
+  color:       $cream
+
+.s02 pre,
+.s02 code
+  color: $blood
+
+// Slide Three
+.s03
+  background: $blood
+  color:      $pitch
+
+.s03 pre,
+.s03 code
+  color: $cream
+
+// Slide Four
+.s04
+  background: $cream
+  color:      $sky
+
+.s04 pre,
+.s04 code
+  color: $sea
+
+// Slide Five
+.s05
+  background: $pitch
+  color:      $sky
+
+.s05 pre,
+.s05 code
+  color: $cream
+
+// Slide Six
+.s06
+  background: $sky
+  color:      $pitch
+
+.s06 pre,
+.s06 code
+  color: $cream
+
+// Slide Seven
+.s07
+  background: $stone
+  color:      $cream
+
+.s07 pre,
+.s07 code
+  color: $sea
+
+// Slide Eight
+.s08
+  background: $sea
+  color:      $pitch
+
+.s08 .emote
+  color: $pitch
+  font-family: Monotonous
+
+.s08 pre,
+.s08 code
+  color: $cream
+
+// Customizations
+.haskell-platform
+  color: $cream
+
+.haskell-platform a,
+.haskell-platform a:visited,
+  color: $blood
+

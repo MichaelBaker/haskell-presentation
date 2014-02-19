@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<head>
+  <title>Presentation</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Presentation">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/application.css">
+
+  <script src="js/zepto.min.js"></script>
+  <script src="js/keymaster.min.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/go-to-slide-frame.js"></script>
+  <script src="js/scroll-to-slide.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/color-slides.js"></script>
+  <script src="js/number-slides.js"></script>
+  <script src="js/dispatch.js"></script>
+  <script src="js/application.js"></script>
+</head>
+
+<body>
+  <div class="go-to-slide-frame">
+    <div class="lens"></div>
+    <div class="content">
+      <div class="label">Go To Page</div>
+      <div class="value"></div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      <p>
+        <span class="intro-to-haskell">An Introduction to Haskell</span> <span class="or">or</span> <span class="applicative">The Applicative Functor's guide to caring for your Monoidal Arrow</span>
+      </p>
+      <img class="haskell-logo" src="img/haskell-logo-500px.png">
+    </div>
+  </div>
+
+  <div class="slide haskell-platform">
+    <div class="text">
+      The <a href="http://lambda.haskell.org/platform/doc/current/start.html">Haskell Platform</a> comes with a compiler, an interpreter, a bunch of libraries, and a package manager/build tool.
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      <a href="http://haskell-slides.twernmilt.com/" style="position:relative; top:100px;">http://haskell-slides.twernmilt.com/</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      GHCi and Prelude
+<pre>
+( )☛  ghci
+GHCi, version 7.4.2: http://www.haskell.org/ghc/  :? for help
+Loading package ghc-prim ... linking ... done.
+Loading package integer-gmp ... linking ... done.
+Loading package base ... linking ... done.
+Prelude>
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Expressions
+<pre style="width: 390px; margin: auto; margin-top: 100px;">
+Prelude> 5 + 3
+8
+Prelude> max 5 4
+5
+Prelude> sum [1, 3, 4]
+8
+Prelude> not True
+False
+Prelude> fst ("I'm da first", 2)
+"I'm da first"
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Reading types
+<pre style="width: 400px; margin: auto;">
+Prelude> :t [True, False, False]
+[True, False, False] :: [Bool]
+
+Prelude> :t "Welp"
+"Welp" :: [Char]
+
+Prelude> :t not
+not :: Bool -> Bool
+
+Prelude> :t and
+and :: [Bool] -> Bool
+
+Prelude> :t (++)
+(++) :: [a] -> [a] -> [a]
+
+Prelude> :t map
+map :: (a -> b) -> [a] -> [b]
+
+Prelude> :q
+Leaving GHCi.
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      The <code>runhaskell</code> interpreter
+<pre>
+( )☛  echo 'main = print "Im a computa"' > computa.hs
+
+( )☛  runhaskell computa.hs 
+"Im a computa"
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      The Glorious Glasgow Haskell Compiler
+<pre>
+( )☛  ghc computa.hs
+[1 of 1] Compiling Main             ( computa.hs, computa.o )
+Linking computa ...
+
+( )☛  ./computa
+"Im a computa"
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Programming languages are made of primitives, means of combination, and means of abstraction.
+    </div>
+  </div>
+
+
+  <div class="slide">
+    <div class="text">
+      In Haskell, functions play all three roles.
+<pre style="width: 530px; margin: auto; margin-top: 100px;">
+not                          -- Primitive
+notAThing = not . isAThing   -- Composition
+notAThing "Is this a thing?" -- Abstraction
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+Here's how we write functions
+<pre style="width: 300px; margin: auto; margin-top: 100px;">
+  name  args  body
+   |     |    _|_
+   |     |   |   |
+   v     V   V   V
+1 square x = x * x
+2
+3 main = print (square 4)
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Associativity
+<pre style="width: 450px; margin: auto; margin-top: 100px;">
+print square 4 ≡ ((print square) 4)
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Conditionals
+<pre style="width: 450px; margin: auto; margin-top: 100px;">
+1 absoluteValue x | x < 0     = -x
+2                 | otherwise = x
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Tree search!!!!!!
+      <pre style="width: 500px; margin: auto; margin-top: 100px;">
+        cd 00-tree-search
+        runhaskell Exercise.hs
+      </pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Types
+<pre style="width: 550px; margin: auto; margin-top: 100px;">
+Int                          -- Primitive
+data Pair = MakePair Int Int -- Composition
+
+    Type   Constructor
+      |        |       Field
+      |        |         |
+      V        V         V
+data Pair = MakePair Int Int
+
+Prelude> MakePair 5 6 :: Pair
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Two and only two ways to make types
+<pre style="width: 600px; margin:auto; margin-top: 100px;">
+data Color = Red | Yellow | Green | Blue
+data Pair  = MakePair Int Int
+
+data Medium = CD [Track]
+            | Book Title
+            | Magazine Title Volume Issue
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Recursive types and type parameters
+<pre style="width: 400px; margin:auto; margin-top: 100px;">
+data AnyPair a b = Pair a b
+
+data List a = EmptyList
+            | Link a (List a)
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Functions pull apart data
+<pre style="width: 350px; margin:auto; margin-top: 100px;">
+data Pair = MakePair Int Int
+
+thePair = MakePair 5 6
+
+first (MakePair x y) = x
+addEm (MakePair x y) = x + y
+
+Prelude> first thePair
+5
+Prelude> addEm thePair
+11
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Safety of pattern matching
+<pre>
+data ThreeKinds = KindOne   Int
+                | KindTwo   [Char]
+                | KindThree ThreeKinds
+
+-- Compiler warning <span class="emote">(ಥ﹏ಥ)</span>
+-- Warning: Pattern match(es) are non-exhaustive
+--          In an equation for `show': Patterns not matched: KindThree _
+show :: ThreeKinds -> [Char]
+show (KindOne a)   = "KindOne " ++ show a
+show (KindTwo a)   = "KindTwo " ++ a
+
+-- Noice <span class="emote">(⌐■_■)</span>
+show :: ThreeKinds -> [Char]
+show (KindOne a)   = "KindOne " ++ show a
+show (KindTwo a)   = "KindTwo " ++ a
+show (KindThree a) = "KindThree (" ++ show a ++ ")"
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Tree data!!!!
+<pre style="width: 350px; margin:auto; margin-top: 100px;">
+   cd 01-tree-data
+   runhaskell Exercise.hs
+            or
+cd 01-tree-data
+runhaskell -Wall Exercise.hs
+</pre>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="text">
+      Thanks
+    </div>
+  </div>
+</body>
+</html>
